@@ -1,0 +1,19 @@
+This is a placeholder for a PDF resume.
+
+In a real portfolio, this would be replaced with an actual PDF resume.
+
+The resume should include:
+- Education
+- Work experience
+- Skills
+- Projects
+- Contact information
+
+You can create a PDF resume using tools like:
+- Microsoft Word (Save as PDF)
+- Google Docs (Export as PDF)
+- Adobe InDesign
+- Canva
+- Resume builder websites
+
+Remember to update the links in index.html and resume.html to point to your actual resume.pdf file when you create it. 
