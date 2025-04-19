@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaveedCR#8.1 | Resume</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation Bar -->
+    <header class="fixed w-full bg-white shadow-sm z-50 transition-all duration-300 glass-nav">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold logo-text">
+                    <span class="text-indigo-600">Naveed</span><span class="text-gray-800 dark:text-white">CR#8.1</span>
+                    <span class="text-xs align-top bg-indigo-600 text-white px-1.5 py-0.5 rounded ml-1">Dev</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                    <a href="index.html#about" class="nav-link">About Me</a>
+                    <a href="resume.html" class="nav-link active">Resume</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 text-gray-600 focus:outline-none btn-3d">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <!-- Social Icons in Nav -->
+                    <div class="flex space-x-3">
+                        <a href="#" class="social-icon text-sm">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon text-sm">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Controls -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Dark Mode Toggle (Mobile) -->
+                    <button id="theme-toggle" class="p-2 text-gray-600 focus:outline-none btn-3d">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none btn-3d">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2 rounded-lg shadow-lg bg-white dark:bg-gray-800">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="index.html#projects" class="mobile-nav-link">Projects</a>
+                <a href="index.html#about" class="mobile-nav-link">About Me</a>
+                <a href="resume.html" class="mobile-nav-link active">Resume</a>
+                <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+                
+                <!-- Social Icons in Mobile Menu -->
+                <div class="flex space-x-4 p-4 border-t border-gray-100 dark:border-gray-700">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Resume Section -->
+    <section class="pt-28 pb-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden glassmorphism">
+                <!-- Resume Header -->
+                <div class="p-8 border-b border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col md:flex-row items-center md:items-start justify-between">
+                        <div class="mb-6 md:mb-0">
+                            <h1 class="text-3xl font-bold text-gray-800 dark:text-white">NaveedCR#8.1</h1>
+                            <h2 class="text-xl text-indigo-600 dark:text-indigo-400 font-medium mt-1">Software Engineering Student</h2>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <a href="mailto:contact@example.com" class="text-gray-600 dark:text-gray-300 mb-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                <i class="fas fa-envelope mr-2"></i>contact@example.com
+                            </a>
+                            <a href="tel:+1234567890" class="text-gray-600 dark:text-gray-300 mb-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                                <i class="fas fa-phone mr-2"></i>+123 456 7890
+                            </a>
+                            <span class="text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-map-marker-alt mr-2"></i>City, Country
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Download Button -->
+                    <div class="mt-6 flex justify-center md:justify-end">
+                        <a href="assets/docs/resume.pdf" download class="btn-primary">
+                            <span><i class="fas fa-download mr-2"></i>Download Resume</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Resume Content -->
+                <div class="p-8">
+                    <!-- Summary Section -->
+                    <section class="mb-10" data-aos="fade-up">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Professional Summary</h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            A passionate Software Engineering student with experience in mobile and web development. Skilled in Flutter, Dart, JavaScript, and Java. Committed to creating efficient, elegant, and user-friendly applications while continuously learning new technologies and methodologies in the rapidly evolving tech landscape.
+                        </p>
+                    </section>
+                    
+                    <!-- Education Section -->
+                    <section class="mb-10" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Education</h3>
+                        <div class="mb-4">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">BSc in Software Engineering</h4>
+                                <span class="text-indigo-600 dark:text-indigo-400 text-sm">2021 - Present</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 italic">University of Technology</p>
+                            <p class="text-gray-700 dark:text-gray-300 mt-2">
+                                Coursework includes: Data Structures, Algorithms, Object-Oriented Programming, Database Systems, Web Development, and Mobile Application Development.
+                            </p>
+                        </div>
+                    </section>
+                    
+                    <!-- Skills Section -->
+                    <section class="mb-10" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Technical Skills</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Programming Languages</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">Dart</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">Java</span>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">HTML/CSS</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Frameworks & Libraries</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">Flutter</span>
+                                    <span class="tech-badge">React</span>
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">Express</span>
+                                    <span class="tech-badge">TailwindCSS</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Tools & Platforms</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">Git</span>
+                                    <span class="tech-badge">Firebase</span>
+                                    <span class="tech-badge">MongoDB</span>
+                                    <span class="tech-badge">MySQL</span>
+                                    <span class="tech-badge">Visual Studio Code</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Other Skills</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-badge">UI/UX Design</span>
+                                    <span class="tech-badge">Responsive Design</span>
+                                    <span class="tech-badge">RESTful APIs</span>
+                                    <span class="tech-badge">Agile/Scrum</span>
+                                    <span class="tech-badge">Problem Solving</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Experience Section -->
+                    <section class="mb-10" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Experience</h3>
+                        
+                        <!-- Experience Item 1 -->
+                        <div class="mb-6">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Mobile App Developer Intern</h4>
+                                <span class="text-indigo-600 dark:text-indigo-400 text-sm">2023 - Present</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 italic">Tech Solutions Inc.</p>
+                            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+                                <li>Developed and maintained cross-platform mobile applications using Flutter and Dart</li>
+                                <li>Implemented state management solutions and responsive UI designs</li>
+                                <li>Collaborated with design and backend teams to integrate APIs and services</li>
+                                <li>Participated in code reviews and agile development processes</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Experience Item 2 -->
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Web Development Freelancer</h4>
+                                <span class="text-indigo-600 dark:text-indigo-400 text-sm">2022 - 2023</span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 italic">Self-employed</p>
+                            <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+                                <li>Built responsive websites for small businesses and startups</li>
+                                <li>Created modern UI/UX designs using HTML, CSS, JavaScript, and React</li>
+                                <li>Managed client relationships and project timelines</li>
+                                <li>Implemented SEO best practices and performance optimizations</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!-- Projects Section -->
+                    <section class="mb-10" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Projects</h3>
+                        
+                        <!-- Project Item 1 -->
+                        <div class="mb-6">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Mobile E-Commerce App</h4>
+                                <div>
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 text-sm hover:underline mr-3">
+                                        <i class="fab fa-github mr-1"></i>GitHub
+                                    </a>
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 text-sm hover:underline">
+                                        <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300 mt-1">
+                                A full-featured e-commerce mobile application built with Flutter and Firebase, featuring product browsing, cart functionality, user authentication, and payment processing.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tech-badge">Flutter</span>
+                                <span class="tech-badge">Dart</span>
+                                <span class="tech-badge">Firebase</span>
+                                <span class="tech-badge">Stripe API</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Item 2 -->
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="text-lg font-semibold text-gray-800 dark:text-white">Portfolio Website</h4>
+                                <div>
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 text-sm hover:underline mr-3">
+                                        <i class="fab fa-github mr-1"></i>GitHub
+                                    </a>
+                                    <a href="#" class="text-indigo-600 dark:text-indigo-400 text-sm hover:underline">
+                                        <i class="fas fa-external-link-alt mr-1"></i>Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300 mt-1">
+                                A responsive personal portfolio website built with HTML, Tailwind CSS, and JavaScript, featuring dark mode, animations, and a responsive design.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">TailwindCSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">AOS Library</span>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Certifications Section -->
+                    <section data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Certifications</h3>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <i class="fas fa-certificate text-indigo-600 dark:text-indigo-400 mr-2"></i>
+                                Flutter Development Bootcamp - App Brewery (2023)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-certificate text-indigo-600 dark:text-indigo-400 mr-2"></i>
+                                Web Development Bootcamp - Udemy (2022)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-certificate text-indigo-600 dark:text-indigo-400 mr-2"></i>
+                                JavaScript Algorithms and Data Structures - freeCodeCamp (2022)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-certificate text-indigo-600 dark:text-indigo-400 mr-2"></i>
+                                UI/UX Design Fundamentals - Coursera (2021)
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <!-- Footer Wave -->
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-4">
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div>
+                    <h3 class="footer-heading">About Me</h3>
+                    <div class="footer-about">
+                        <p class="text-gray-300">
+                            A passionate Software Engineering student focused on creating elegant, efficient applications with modern technologies.
+                        </p>
+                        <div class="footer-icon-container">
+                            <a href="#" class="footer-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="footer-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="footer-icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="footer-icon">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#projects" class="footer-link"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="index.html#about" class="footer-link"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                        <li><a href="resume.html" class="footer-link"><i class="fas fa-chevron-right"></i> Resume</a></li>
+                        <li><a href="index.html#contact" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Technology Stack -->
+                <div>
+                    <h3 class="footer-heading">Tech Stack</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Flutter</span>
+                        <span class="tech-badge">Dart</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <ul>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span>City, Country</span>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>contact@example.com</span>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <span>+123 456 7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright Bar -->
+            <div class="copyright-bar">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>© 2025 NaveedCR#8.1. All rights reserved.</p>
+                    <p class="mt-2 md:mt-0">
+                        Designed with <i class="fas fa-heart heart-icon"></i> by NaveedCR#8.1
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-5 right-5 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 btn-3d">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
