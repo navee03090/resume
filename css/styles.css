@@ -506,13 +506,4 @@ body.dark .glassmorphism {
 /* 3D Button Effect */
 .btn-3d {
     @apply transform transition-transform duration-200 active:scale-95 active:translate-y-1;
-}
-
-/* Recommendation Cards */
-.recommendation-card {
-    @apply transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl;
-}
-
-.recommendation-card:hover {
-    @apply border-l-4 border-l-indigo-600;
 } 
