@@ -392,4 +392,136 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         }, 500);
     });
+
+    // Recommendation form functionality
+    const recommendationForm = document.getElementById('recommendation-form');
+    const recommendationsList = document.getElementById('recommendations-list');
+    
+    console.log('Recommendation form found:', recommendationForm);
+    console.log('Recommendations list found:', recommendationsList);
+    
+    if (recommendationForm && recommendationsList) {
+        console.log('Adding event listener to recommendation form');
+        recommendationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form submitted!');
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const title = formData.get('title');
+            const text = formData.get('text');
+            
+            console.log('Form data:', { name, title, text });
+            
+            // Create new recommendation element
+            const newRecommendation = document.createElement('div');
+            newRecommendation.className = 'recommendation-card bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg';
+            newRecommendation.setAttribute('data-aos', 'fade-up');
+            newRecommendation.setAttribute('data-aos-delay', '100');
+            
+            // Generate initials from name
+            const initials = name.split(' ').map(word => word.charAt(0)).join('').toUpperCase();
+            
+            // Random color for avatar
+            const colors = ['bg-indigo-600', 'bg-green-600', 'bg-purple-600', 'bg-blue-600', 'bg-red-600', 'bg-yellow-600'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            newRecommendation.innerHTML = `
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 ${randomColor} rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        ${initials}
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="font-semibold text-gray-800 dark:text-white">${name}</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">${title}</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 italic">
+                    "${text}"
+                </p>
+            `;
+            
+            console.log('Created new recommendation element:', newRecommendation);
+            
+            // Add to recommendations list (append to existing list)
+            recommendationsList.appendChild(newRecommendation);
+            console.log('Added recommendation to list');
+            
+            // Re-initialize AOS for the new element
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+            
+            // Show success popup
+            showRecommendationPopup();
+            
+            // Reset form
+            this.reset();
+        });
+    } else {
+        console.error('Recommendation form or list not found!');
+    }
+    
+    // Function to show recommendation submission popup
+    function showRecommendationPopup() {
+        // Create popup overlay
+        const popupOverlay = document.createElement('div');
+        popupOverlay.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+        popupOverlay.style.opacity = '0';
+        popupOverlay.style.transition = 'opacity 0.3s ease';
+        
+        // Create popup content
+        const popupContent = document.createElement('div');
+        popupContent.className = 'bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md mx-4 shadow-xl transform scale-95 transition-transform duration-300';
+        popupContent.innerHTML = `
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-600 dark:text-green-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Thank you for leaving a recommendation!</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">Your recommendation has been successfully added to the list.</p>
+                <button id="close-popup" class="btn-primary">
+                    <span>Close</span>
+                </button>
+            </div>
+        `;
+        
+        popupOverlay.appendChild(popupContent);
+        document.body.appendChild(popupOverlay);
+        
+        // Animate in
+        setTimeout(() => {
+            popupOverlay.style.opacity = '1';
+            popupContent.style.transform = 'scale(1)';
+        }, 10);
+        
+        // Close popup functionality
+        const closePopup = () => {
+            popupOverlay.style.opacity = '0';
+            popupContent.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                document.body.removeChild(popupOverlay);
+            }, 300);
+        };
+        
+        // Close on button click
+        popupContent.querySelector('#close-popup').addEventListener('click', closePopup);
+        
+        // Close on overlay click
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+        
+        // Close on Escape key
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                closePopup();
+                document.removeEventListener('keydown', handleEscape);
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
+    }
 }); 

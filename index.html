@@ -50,8 +50,7 @@
                     <a href="#" class="nav-link active">Home</a>
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#about" class="nav-link">About Me</a>
-                    <a href="resume.html" class="nav-link">Resume</a>
-                    <a href="#contact" class="nav-link">Recomendations</a>
+                    <a href="#recommendations" class="nav-link">Recommendations</a>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-4">
@@ -90,8 +89,7 @@
                 <a href="#" class="mobile-nav-link active">Home</a>
                 <a href="#projects" class="mobile-nav-link">Projects</a>
                 <a href="#about" class="mobile-nav-link">About Me</a>
-                <a href="resume.html" class="mobile-nav-link">Resume</a>
-                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <a href="#recommendations" class="mobile-nav-link">Recommendations</a>
                 
                 <!-- Social Icons in Mobile Menu -->
                 <div class="flex space-x-4 p-4 border-t border-gray-100 dark:border-gray-700">
@@ -205,6 +203,97 @@
                             <span class="font-semibold">Software Engineer</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title mx-auto" data-aos="fade-up">Recommendations</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                What people say about my work
+            </p>
+            
+            <!-- Existing Recommendations -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12" id="recommendations-list">
+                <!-- Recommendation 1 -->
+                <div class="recommendation-card bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            JS
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800 dark:text-white">John Smith</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Senior Developer at TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 italic">
+                        "Naveed is an exceptional developer with strong problem-solving skills. His Flutter applications are well-architected and user-friendly. Highly recommended for any mobile development project."
+                    </p>
+                </div>
+                
+                <!-- Recommendation 2 -->
+                <div class="recommendation-card bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            MS
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Maria Garcia</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Project Manager at StartupXYZ</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 italic">
+                        "Working with Naveed was a pleasure. He delivered our web application ahead of schedule with excellent code quality. His attention to detail and communication skills are outstanding."
+                    </p>
+                </div>
+                
+                <!-- Recommendation 3 -->
+                <div class="recommendation-card bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            DR
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Dr. Robert Chen</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Professor at University</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 italic">
+                        "Naveed demonstrates excellent analytical thinking and technical skills. His machine learning project showed deep understanding of algorithms and implementation. A promising software engineer."
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Add Recommendation Form -->
+            <div class="max-w-2xl mx-auto mt-16">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Add a Recommendation</h3>
+                    <form id="recommendation-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="recommender-name" class="block text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+                                <input type="text" id="recommender-name" name="name" required 
+                                       class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600 bg-white dark:bg-gray-700 dark:text-white">
+                            </div>
+                            <div>
+                                <label for="recommender-title" class="block text-gray-700 dark:text-gray-300 mb-2">Your Title/Company</label>
+                                <input type="text" id="recommender-title" name="title" required 
+                                       class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600 bg-white dark:bg-gray-700 dark:text-white">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="recommendation-text" class="block text-gray-700 dark:text-gray-300 mb-2">Recommendation</label>
+                            <textarea id="recommendation-text" name="text" rows="4" required 
+                                      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600 bg-white dark:bg-gray-700 dark:text-white"
+                                      placeholder="Write your recommendation here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full py-3">
+                            <span>Submit Recommendation</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
